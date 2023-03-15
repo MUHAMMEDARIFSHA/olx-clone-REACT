@@ -4,17 +4,23 @@
 }
 .viewParentDiv .imageShowDiv {
   padding: 16px;
-  width: 70vw;
+  width: 60vw;
 }
 .viewParentDiv .imageShowDiv img {
-  width: 65vw;
-  height: 85vh;
+ width: 400px;
+ height: 600px;
+ margin-left: 200px;
+ margin-top: 50px;
 }
 
 .viewParentDiv .rightSection {
   padding: 16px;
   margin-top: 3em;
   width: 30vw;
+}
+.img_view{
+  width: 400px;
+  height: 600px;
 }
 
 .viewParentDiv .rightSection .productDetails :first-child {
@@ -27,17 +33,21 @@
 }
 
 .viewParentDiv .rightSection .productDetails {
-  border: 1px solid black;
+  bottom: 1px;
+ font-size: 24px;
+ font-weight: 600;
   padding: 6px;
   border-radius: 6px;
   margin-bottom: 2em;
-  width: 100%;
+  margin-right: 100px;
 }
 
-.viewParentDiv .rightSection .contactDetails {
-  border: 1px solid black;
-  padding: 6px;
-  border-radius: 6px;
+
+.sellerDetails{
+  font-weight: 700;
+  font-size: 34px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .viewParentDiv .rightSection .contactDetails :first-child {

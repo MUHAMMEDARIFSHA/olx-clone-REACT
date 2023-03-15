@@ -62,6 +62,10 @@
   border: 3px solid;
 } */
 
+.search_input{
+margin-top: 12px;
+}
+
 .productSearch .input input {
   border-color: transparent;
   outline-color: transparent;

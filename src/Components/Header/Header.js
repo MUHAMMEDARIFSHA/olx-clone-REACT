@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useContext }from 'react';
 
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
@@ -6,7 +6,19 @@ import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
+import { AuthContext, FirebaseContext } from '../../store/Context';
+import { Link, useNavigate} from 'react-router-dom'
+import { getAuth, signOut } from 'firebase/auth'
+
 function Header() {
+  const navigate = useNavigate()
+  const {user} = useContext(AuthContext)
+  const {firebase} = useContext(FirebaseContext)
+  const auth = getAuth(firebase)
+  const signOutHandler = ()=>{
+    signOut(auth)
+    navigate('/login')
+  }
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -20,7 +32,7 @@ function Header() {
         </div>
         <div className="productSearch">
           <div className="input">
-            <input 
+            <input className='search_input'
               type="text"
               placeholder="Find car,mobile phone and more..."
             />
@@ -34,10 +46,14 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>Login</span>
+          <span>{user?user.displayName : 'Login'}</span>
           <hr />
         </div>
+        <div>
+        {user && <span onClick={signOutHandler}>Logout</span>}
 
+        </div>
+       
         <div className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
